@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.DomainModel", "source\DaprUnleashed.DomainModel\DaprUnleashed.DomainModel.csproj", "{3631D065-C58E-4ED4-BF1D-616765393307}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.CommonServices", "source\DaprUnleashed.CommonServices\DaprUnleashed.CommonServices.csproj", "{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.TransformationService", "source\DaprUnleashed.TransformationService\DaprUnleashed.TransformationService.csproj", "{0059D2B6-4673-4B4A-AEB8-5202C34D4269}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.ExtractionService", "source\DaprUnleashed.ExtractionService\DaprUnleashed.ExtractionService.csproj", "{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.API", "source\DaprUnleashed.IngestionService\DaprUnleashed.API.csproj", "{A519AB55-F62E-4653-B9E9-9354A343362D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Docker|Any CPU = Docker|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}.Docker|Any CPU.ActiveCfg = Debug|Any CPU
+		{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}.Docker|Any CPU.Build.0 = Debug|Any CPU
+		{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572F8FD1-CC13-4E38-AA7D-F07F4B7133D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3631D065-C58E-4ED4-BF1D-616765393307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3631D065-C58E-4ED4-BF1D-616765393307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3631D065-C58E-4ED4-BF1D-616765393307}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
+		{3631D065-C58E-4ED4-BF1D-616765393307}.Docker|Any CPU.Build.0 = Docker|Any CPU
+		{3631D065-C58E-4ED4-BF1D-616765393307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3631D065-C58E-4ED4-BF1D-616765393307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
+		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Docker|Any CPU.Build.0 = Docker|Any CPU
+		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
+		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Docker|Any CPU.Build.0 = Docker|Any CPU
+		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}.Docker|Any CPU.ActiveCfg = Debug|Any CPU
+		{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}.Docker|Any CPU.Build.0 = Debug|Any CPU
+		{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A519AB55-F62E-4653-B9E9-9354A343362D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A519AB55-F62E-4653-B9E9-9354A343362D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A519AB55-F62E-4653-B9E9-9354A343362D}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
+		{A519AB55-F62E-4653-B9E9-9354A343362D}.Docker|Any CPU.Build.0 = Docker|Any CPU
+		{A519AB55-F62E-4653-B9E9-9354A343362D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A519AB55-F62E-4653-B9E9-9354A343362D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D82A5F14-C363-4441-9B1F-4B0333602E50}
+	EndGlobalSection
+EndGlobal
