@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 /source/Nebb.DaprUnleashed.*/Properties/launchSettings.json
 /docker-compose.yml
+/source/DaprUnleashed.TransformationService/Properties/launchSettings.json
+/source/DaprUnleashed.ExtractionService/Properties/launchSettings.json
+/source/DaprUnleashed.IngestionService/Properties/launchSettings.json
