@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 /source/Nebb.DaprUnleashed.*/Properties/launchSettings.json
+/docker-compose.yml
