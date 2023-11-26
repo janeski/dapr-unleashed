@@ -1,9 +1,9 @@
 ﻿using Azure.Identity;
 using Azure.Messaging.ServiceBus;
 using Azure.Security.KeyVault.Secrets;
-using Microsoft.Azure.Cosmos;
-using DaprUnleashed.TransformationService.Services.Interfaces;
 using DaprUnleashed.DomainModel.Implementations;
+using DaprUnleashed.TransformationService.Services.Interfaces;
+using Microsoft.Azure.Cosmos;
 
 namespace DaprUnleashed.TransformationService
 {

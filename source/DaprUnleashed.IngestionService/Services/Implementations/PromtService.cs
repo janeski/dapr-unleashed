@@ -26,9 +26,9 @@ namespace DaprUnleashed.API.Services.Implementations
             var queueRequest = new QueueRequest() { Id = promt.id, Type = promt.Type };
             var queueSerialized = JsonSerializer.Serialize(queueRequest);
             promt.StateTransitions.Add(new StateTransition() { State = "1. Send to transform", DateTime = DateTime.UtcNow });
-            await _queueService.SendAsync(queueSerialized);
             promt.StateTransitions.Add(new StateTransition() { State = "2. Save to storage", DateTime = DateTime.UtcNow });
             await _storageService.InsertAsync(promt);
+            await _queueService.SendAsync(queueSerialized);
         }
     }
 }

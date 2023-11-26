@@ -1,6 +1,4 @@
-﻿using DaprUnleashed.DomainModel;
-
-namespace DaprUnleashed.DomainModel.Interfaces
+﻿namespace DaprUnleashed.DomainModel.Interfaces
 {
     public interface IStorageService
     {

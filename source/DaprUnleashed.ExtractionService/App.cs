@@ -1,9 +1,9 @@
 ﻿using Azure.Identity;
 using Azure.Messaging.ServiceBus;
 using Azure.Security.KeyVault.Secrets;
-using Microsoft.Azure.Cosmos;
 using DaprUnleashed.DomainModel.Implementations;
 using DaprUnleashed.ExtractionService.Services.Interfaces;
+using Microsoft.Azure.Cosmos;
 
 namespace DaprUnleashed.ExtractionService
 {
@@ -55,7 +55,7 @@ namespace DaprUnleashed.ExtractionService
             var database = await _cosmosClient.CreateDatabaseIfNotExistsAsync(databaseName);
             await database.Database.CreateContainerIfNotExistsAsync(containerName, "/Type");
             var _container = _cosmosClient.GetContainer(databaseName, containerName);
-            var storageService = new StorageService(_container);      
+            var storageService = new StorageService(_container);
 
             _extractionService = new Services.Implementations.ExtractionService(storageService);
             Console.WriteLine("Initialization finished");

@@ -27,7 +27,7 @@ namespace DaprUnleashed.ExtractionService.Services.Implementations
             promt.StateTransitions.Add(new StateTransition { DateTime = DateTime.UtcNow, State = "7. Start to extract" });
 
             //call Azure OpenAI Services
-            await Task.Delay(5000);
+            await Task.Delay(2000);
 
             promt.StateTransitions.Add(new StateTransition { DateTime = DateTime.UtcNow, State = "8. Extraction finished" });
             promt.StateTransitions.Add(new StateTransition() { State = "9. Save to storage", DateTime = DateTime.UtcNow });

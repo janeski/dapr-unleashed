@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using DaprUnleashed.API.Services.Interfaces;
 using DaprUnleashed.DomainModel;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DaprUnleashed.API.Controllers
 {
@@ -9,7 +8,7 @@ namespace DaprUnleashed.API.Controllers
     [Route("api/[controller]")]
     public class PromtController : ControllerBase
     {
-        
+
         private readonly ILogger<PromtController> _logger;
         private readonly IPromtService _promtService;
 
@@ -24,7 +23,7 @@ namespace DaprUnleashed.API.Controllers
         {
             try
             {
-                await _promtService.ProcessAsync(promt);                
+                await _promtService.ProcessAsync(promt);
                 return CreatedAtAction(nameof(PostPromt), new { promt.id }, promt);
             }
             catch (Exception ex)

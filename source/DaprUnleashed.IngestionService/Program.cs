@@ -66,7 +66,7 @@ static void RegisterQueueService(IServiceCollection services)
     var keyVaultClient = new SecretClient(keyVaultUri, new DefaultAzureCredential());
     KeyVaultSecret secretKey = keyVaultClient.GetSecret("dapr-unleashed-sb-dev");
     var serviceBusConnectionString = secretKey.Value;
-    
+
     var serviceBusClient = new ServiceBusClient(serviceBusConnectionString);
     services.AddSingleton(serviceBusClient);
 
