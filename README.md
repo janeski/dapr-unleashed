@@ -4,6 +4,9 @@
 
 Welcome to the GitHub repository for "Dapr Unleashed: Accelerating Microservice Development in .NET." This repository serves as a companion to my lecture at Sinergija23 (https://sinergija.live/en/2023) and is designed to demonstrate the practical benefits of integrating Dapr (Distributed Application Runtime) into a .NET microservices architecture. Here is the link to my lecture: https://sinergija.live/en/2023/lectures/370/rapid-development-with-dapr
 
+### Note
+More instructions are comming soon.
+
 ## Repository Structure
 
 The repository is organized into two main branches:
