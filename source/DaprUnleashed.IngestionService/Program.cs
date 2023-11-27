@@ -49,7 +49,7 @@ static async Task RegisterStorageService(IServiceCollection services)
     string containerName = "promts";
 
     DatabaseResponse database = await _cosmosClient.CreateDatabaseIfNotExistsAsync(databaseName);
-    await database.Database.CreateContainerIfNotExistsAsync(containerName, "/Type");
+    await database.Database.CreateContainerIfNotExistsAsync(containerName, "/partitionKey");
 
     var _container = _cosmosClient.GetContainer(databaseName, containerName);
 

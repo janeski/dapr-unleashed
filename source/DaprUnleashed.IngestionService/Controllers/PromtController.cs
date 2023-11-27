@@ -23,6 +23,7 @@ namespace DaprUnleashed.API.Controllers
         {
             try
             {
+                promt.partitionKey = promt.Type;
                 await _promtService.ProcessAsync(promt);
                 return CreatedAtAction(nameof(PostPromt), new { promt.id }, promt);
             }

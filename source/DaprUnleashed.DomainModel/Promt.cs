@@ -22,6 +22,8 @@
 
         public required string Type { get; set; }
 
+        public string partitionKey { get; set; }
+
         public List<StateTransition> StateTransitions { get; set; }
     }
 }
