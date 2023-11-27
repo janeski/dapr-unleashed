@@ -55,7 +55,7 @@ namespace DaprUnleashed.TransformationService
             string databaseName = "dapr-unleashed-cosmosdb-dev";
             string containerName = "promts";
             var database = await _cosmosClient.CreateDatabaseIfNotExistsAsync(databaseName);
-            await database.Database.CreateContainerIfNotExistsAsync(containerName, "/Type");
+            await database.Database.CreateContainerIfNotExistsAsync(containerName, "/partitionKey");
             var _container = _cosmosClient.GetContainer(databaseName, containerName);
             var storageService = new StorageService(_container);
             _extractClient = new ServiceBusClient(serviceBusClientConnectionString);
