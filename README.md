@@ -103,9 +103,8 @@ To experience the application with Dapr integration:
 
 1. Switch to the `dapr` branch:
 
-2. In the components folder add the following file: azurekeyvault.yaml with the following content:
-```
-```
+2. In the components folder add the following file: azurekeyvault.yaml based on the following link: https://docs.dapr.io/reference/components-reference/supported-secret-stores/azure-keyvault/
+
 
 ## Contributing
 
