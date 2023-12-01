@@ -9,15 +9,15 @@ The slides from my lecture are here: https://www.slideshare.net/MiroslavJaneski/
 To run any of the both solutions you need the following Azure resources:
 
 1. Azure Service Bus Instance with Basic pricing tier
-1.1. In the Azure Service Bus Instance create two topics: "transform" and "extract".
+	1. In the Azure Service Bus Instance create two topics: "transform" and "extract".
 2. Azure CosmosDB Instance (Serverless Capacity mode)
-2.1. Create a Database with DatabaseId: "dapr-unleashed-cosmosdb-dev"
-2.2. Create a Container with partitionKey: /partitionKey and id: id
+	1. Create a Database with DatabaseId: "dapr-unleashed-cosmosdb-dev"
+	2. Create a Container with partitionKey: /partitionKey and id: id
 3. Azure KeyVault Instance with Standard pricing tier
-3.1. In the Azure Key Vault add the following secrets:
-3.1.1. dapr-unleashed-cosmosdb-dev-key: CosmosDB master key
-3.1.2. dapr-unleashed-sb-dev: Azure Service bus connection string
-3.1.3. dapr-unleashed-cosmosdb-dev: CosmosDB connection key
+	1. In the Azure Key Vault add the following secrets:
+		1. dapr-unleashed-cosmosdb-dev-key: CosmosDB master key
+		2. dapr-unleashed-sb-dev: Azure Service bus connection string
+		3. dapr-unleashed-cosmosdb-dev: CosmosDB connection key
 
 ## Repository Structure
 
