@@ -49,11 +49,9 @@ To run the application without Dapr:
 
 git checkout develop
 
-2. Follow the instructions in the `README.md` within this branch for setup and running the application.
+2. Create docker-compose file and add the 3 services in the docker-compose file
 
-3. Create docker-compose file and add the 3 services in the docker-compose file
-
-4. Add environment variable to each docker container for the following values
+3. Add environment variable to each docker container for the following values
 	1. DaprUnleashedKeyVault
 	2. AZURE_TENANT_ID
 	3. AZURE_CLIENT_ID
@@ -105,8 +103,9 @@ To experience the application with Dapr integration:
 
 1. Switch to the `dapr` branch:
 
-
-2. Follow the instructions in the `README.md` within this branch for setting up Dapr and running the application.
+2. In the components folder add the following file: azurekeyvault.yaml with the following content:
+```
+```
 
 ## Contributing
 
@@ -121,5 +120,5 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 For any questions or further information, please contact:
 
 - Miroslav Janeski
-- Email: miroslav.janeski@gmail.com
+- Email: miroslav.janeski[at]gmail.com
 - Project Link: https://github.com/janeski/dapr-unleashed
