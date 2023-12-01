@@ -5,7 +5,7 @@
 Welcome to the GitHub repository for "Dapr Unleashed: Accelerating Microservice Development in .NET." This repository serves as a companion to my lecture at Sinergija23 (https://sinergija.live/en/2023) and is designed to demonstrate the practical benefits of integrating Dapr (Distributed Application Runtime) into a .NET microservices architecture. Here is the link to my lecture: https://sinergija.live/en/2023/lectures/370/rapid-development-with-dapr
 The slides from my lecture are here: https://www.slideshare.net/MiroslavJaneski/dapr-unleashed-accelerating-microservice-development
 
-### Before you run
+## Before you run
 To run any of the both solutions you need the following Azure resources:
 
 1. Azure Service Bus Instance with Basic pricing tier
@@ -18,6 +18,7 @@ To run any of the both solutions you need the following Azure resources:
 		1. dapr-unleashed-cosmosdb-dev-key: CosmosDB master key
 		2. dapr-unleashed-sb-dev: Azure Service bus connection string
 		3. dapr-unleashed-cosmosdb-dev: CosmosDB connection key
+4. Create application instance and grant list secrect access in the Azure KeyVault instance
 
 ## Repository Structure
 
@@ -49,6 +50,54 @@ To run the application without Dapr:
 git checkout develop
 
 2. Follow the instructions in the `README.md` within this branch for setup and running the application.
+
+3. Create docker-compose file and add the 3 services in the docker-compose file
+
+4. Add environment variable to each docker container for the following values
+	1. DaprUnleashedKeyVault
+	2. AZURE_TENANT_ID
+	3. AZURE_CLIENT_ID
+	4. AZURE_CLIENT_ID
+
+```
+version: '3.4'
+
+services:
+  daprunleashed.api:
+    image: ${DOCKER_REGISTRY-}daprunleashedapi
+    environment:
+        "DaprUnleashedKeyVault": ""
+        "AZURE_TENANT_ID": ""
+        "AZURE_CLIENT_ID": ""
+        "AZURE_CLIENT_SECRET": ""
+    build:
+      context: .
+      dockerfile: source/DaprUnleashed.IngestionService/Dockerfile
+
+  daprunleashed.transformationservice:
+    image: ${DOCKER_REGISTRY-}daprunleashedtransformationservice
+    environment:
+        "DaprUnleashedKeyVault": ""
+        "AZURE_TENANT_ID": ""
+        "AZURE_CLIENT_ID": ""
+        "AZURE_CLIENT_SECRET": ""
+    build:
+      context: .
+      dockerfile: source/DaprUnleashed.TransformationService/Dockerfile
+
+
+  daprunleashed.extractionservice:
+    image: ${DOCKER_REGISTRY-}daprunleashedextractionservice
+    environment:
+        "DaprUnleashedKeyVault": ""
+        "AZURE_TENANT_ID": ""
+        "AZURE_CLIENT_ID": ""
+        "AZURE_CLIENT_SECRET": ""
+    build:
+      context: .
+      dockerfile: source/DaprUnleashed.ExtractionService/Dockerfile
+
+```
 
 ### Running the Application With Dapr
 
