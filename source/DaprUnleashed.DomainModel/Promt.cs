@@ -18,11 +18,9 @@
 
         public required string Context { get; set; }
 
-        public string Response { get; set; }
-
+        public string Response { get; set; } 
+        
         public required string Type { get; set; }
-
-        public string partitionKey { get; set; }
 
         public List<StateTransition> StateTransitions { get; set; }
     }

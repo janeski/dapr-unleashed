@@ -5,15 +5,20 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.DomainModel", "source\DaprUnleashed.DomainModel\DaprUnleashed.DomainModel.csproj", "{3631D065-C58E-4ED4-BF1D-616765393307}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.CommonServices", "source\DaprUnleashed.CommonServices\DaprUnleashed.CommonServices.csproj", "{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.TransformationService", "source\DaprUnleashed.TransformationService\DaprUnleashed.TransformationService.csproj", "{0059D2B6-4673-4B4A-AEB8-5202C34D4269}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.ExtractionService", "source\DaprUnleashed.ExtractionService\DaprUnleashed.ExtractionService.csproj", "{117B38F0-C430-4CB2-81AD-65CFB5FB3EFC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprUnleashed.API", "source\DaprUnleashed.IngestionService\DaprUnleashed.API.csproj", "{A519AB55-F62E-4653-B9E9-9354A343362D}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{73EC533C-C00E-44DF-BF7E-1699E317227C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{648E48F0-4012-4672-8288-22942E82ACCA}"
+	ProjectSection(SolutionItems) = preProject
+		components\azurekeyvault.yaml = components\azurekeyvault.yaml
+		components\promtstore.yaml = components\promtstore.yaml
+		components\pubsub.yaml = components\pubsub.yaml
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,12 +33,6 @@ Global
 		{3631D065-C58E-4ED4-BF1D-616765393307}.Docker|Any CPU.Build.0 = Docker|Any CPU
 		{3631D065-C58E-4ED4-BF1D-616765393307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3631D065-C58E-4ED4-BF1D-616765393307}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
-		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Docker|Any CPU.Build.0 = Docker|Any CPU
-		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AC3BCAA-DF8A-4F5D-B762-EC82DD27EA1D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0059D2B6-4673-4B4A-AEB8-5202C34D4269}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
@@ -52,12 +51,12 @@ Global
 		{A519AB55-F62E-4653-B9E9-9354A343362D}.Docker|Any CPU.Build.0 = Docker|Any CPU
 		{A519AB55-F62E-4653-B9E9-9354A343362D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A519AB55-F62E-4653-B9E9-9354A343362D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73EC533C-C00E-44DF-BF7E-1699E317227C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73EC533C-C00E-44DF-BF7E-1699E317227C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73EC533C-C00E-44DF-BF7E-1699E317227C}.Docker|Any CPU.ActiveCfg = Debug|Any CPU
-		{73EC533C-C00E-44DF-BF7E-1699E317227C}.Docker|Any CPU.Build.0 = Debug|Any CPU
-		{73EC533C-C00E-44DF-BF7E-1699E317227C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73EC533C-C00E-44DF-BF7E-1699E317227C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}.Docker|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}.Docker|Any CPU.Build.0 = Debug|Any CPU
+		{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE89784-D58E-4655-AB4D-8F20EACBF9DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

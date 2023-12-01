@@ -1,7 +1,9 @@
-﻿namespace DaprUnleashed.TransformationService.Services.Interfaces
+﻿using DaprUnleashed.DomainModel;
+
+namespace DaprUnleashed.TransformationService.Services.Interfaces
 {
     public interface ITransformationService
     {
-        Task TransformAsync(string queueMessage);
+        Task TransformAsync(QueueRequest queueRequest);
     }
 }

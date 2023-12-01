@@ -4,9 +4,10 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "daprunleashed.api": "StartDebugging",
+        "daprunleashedapi": "StartDebugging",
         "daprunleashed.transformationservice": "StartDebugging",
-        "daprunleashed.extractionservice": "StartDebugging"
+        "daprunleashed.extractionservice": "StartDebugging",
+        "daprunleashed.api": "StartDebugging"
       }
     }
   }

@@ -1,0 +1,15 @@
+﻿apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.azure.servicebus.queues
+  version: v1
+  metadata:
+  - name: connectionString
+    secretKeyRef:
+        name: dapr-unleashed-sb-dev
+        key: dapr-unleashed-sb-dev
+
+auth:
+  secretStore: azurekeyvault

@@ -3,9 +3,9 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>73ec533c-c00e-44df-bf7e-1699e317227c</ProjectGuid>
+    <ProjectGuid>9ee89784-d58e-4655-ab4d-8f20eacbf9dd</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>daprunleashed.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

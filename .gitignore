@@ -402,3 +402,4 @@ FodyWeavers.xsd
 /source/DaprUnleashed.TransformationService/Properties/launchSettings.json
 /source/DaprUnleashed.ExtractionService/Properties/launchSettings.json
 /source/DaprUnleashed.IngestionService/Properties/launchSettings.json
+/components/azurekeyvault.yaml

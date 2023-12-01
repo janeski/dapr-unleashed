@@ -8,7 +8,7 @@ namespace DaprUnleashed.API.Controllers
     [Route("api/[controller]")]
     public class PromtController : ControllerBase
     {
-
+        
         private readonly ILogger<PromtController> _logger;
         private readonly IPromtService _promtService;
 
@@ -23,8 +23,7 @@ namespace DaprUnleashed.API.Controllers
         {
             try
             {
-                promt.partitionKey = promt.Type;
-                await _promtService.ProcessAsync(promt);
+                await _promtService.ProcessAsync(promt);                
                 return CreatedAtAction(nameof(PostPromt), new { promt.id }, promt);
             }
             catch (Exception ex)

@@ -1,14 +1,17 @@
-﻿namespace DaprUnleashed.ExtractionService
-{
-    public class Program
-    {
-        protected Program() { }
-        static async Task Main(string[] args)
-        {
-            var tokenSource = new CancellationTokenSource();
-            var token = tokenSource.Token;
-            var app = new App();
-            await app.Run(token);
-        }
-    }
-}
+﻿
+using DaprUnleashed.ExtractionService.Services.Implementations;
+using DaprUnleashed.ExtractionService.Services.Interfaces;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<IExtractionService, ExtractionService>();
+builder.Services.AddControllers().AddDapr();
+builder.Services.AddDaprClient();
+
+var app = builder.Build();
+
+app.UseAuthorization();
+app.UseCloudEvents();
+app.MapControllers();
+app.MapSubscribeHandler();
+app.Run();

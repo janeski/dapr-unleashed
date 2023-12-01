@@ -1,7 +1,9 @@
-﻿namespace DaprUnleashed.ExtractionService.Services.Interfaces
+﻿using DaprUnleashed.DomainModel;
+
+namespace DaprUnleashed.ExtractionService.Services.Interfaces
 {
     public interface IExtractionService
     {
-        Task ExtractAsync(string queueMessage);
+        Task ExtractAsync(QueueRequest queueRequest);
     }
 }

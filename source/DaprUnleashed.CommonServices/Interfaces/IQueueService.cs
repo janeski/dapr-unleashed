@@ -1,4 +1,6 @@
-﻿namespace DaprUnleashed.DomainModel.Interfaces
+﻿using DaprUnleashed.DomainModel;
+
+namespace DaprUnleashed.DomainModel.Interfaces
 {
     public interface IQueueService
     {

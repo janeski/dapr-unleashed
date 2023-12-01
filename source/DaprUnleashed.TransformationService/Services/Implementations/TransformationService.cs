@@ -1,41 +1,33 @@
-﻿using System.Text.Json;
+﻿using Dapr.Client;
 using DaprUnleashed.DomainModel;
-using DaprUnleashed.DomainModel.Interfaces;
 using DaprUnleashed.TransformationService.Services.Interfaces;
 
 namespace DaprUnleashed.TransformationService.Services.Implementations
 {
     public class TransformationService : ITransformationService
     {
-        private readonly IStorageService _storageService;
-        private readonly IQueueService _queueService;
-
-        public TransformationService(IStorageService storageService, IQueueService queueService)
+        private readonly DaprClient _daprClient;
+        public TransformationService(DaprClient daprClient)
         {
-            _storageService = storageService;
-            _queueService = queueService;
+            _daprClient = daprClient;
         }
 
-        public async Task TransformAsync(string queueMessage)
+        public async Task TransformAsync(QueueRequest queueRequest)
         {
-            var messageFromQueue = JsonSerializer.Deserialize<QueueRequest>(queueMessage);
+            var metadata = new Dictionary<string, string> { { "partitionKey", queueRequest.Type } };
 
-            if (messageFromQueue == null)
-            {
-                return;
-            }
-
-            var promt = await _storageService.GetByIdAsync(messageFromQueue.Id, messageFromQueue.Type);
-            promt.StateTransitions.Add(new StateTransition { DateTime = DateTime.UtcNow, State = "3. Start to transform" });
+            var promt = await _daprClient.GetStateAsync<Promt>("promtstore", queueRequest.Id.ToString(),ConsistencyMode.Eventual,metadata);
+            promt.StateTransitions.Add(new StateTransition { State = "3. Start to transform", DateTime = DateTime.UtcNow  });
 
             //call Azure Cognitive Services
             await Task.Delay(2000);
 
             promt.StateTransitions.Add(new StateTransition { DateTime = DateTime.UtcNow, State = "4. Transform finished" });
-            promt.StateTransitions.Add(new StateTransition() { State = "5. Send to extract", DateTime = DateTime.UtcNow });
-            promt.StateTransitions.Add(new StateTransition() { State = "6. Save to storage", DateTime = DateTime.UtcNow });
-            await _storageService.UpdateAsync(promt.id, promt);
-            await _queueService.SendAsync(queueMessage);
+            promt.StateTransitions.Add(new StateTransition() { State = "5. Save to storage", DateTime = DateTime.UtcNow });
+            promt.StateTransitions.Add(new StateTransition() { State = "6. Send to extract", DateTime = DateTime.UtcNow });
+            await _daprClient.SaveStateAsync("promtstore", promt.id.ToString(), promt, metadata: metadata);
+            await _daprClient.PublishEventAsync("pubsub", "extract", queueRequest);
+
         }
     }
 }
